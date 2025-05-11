@@ -74,6 +74,41 @@ video {
     top: 1px;
 }
 
+.typewriter {
+    font-size: 1.5em;
+    color: #010101;
+    font-family: 'Courier New', Courier, monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #fff;
+    width: 0;
+    animation: typing 4s steps(70, end) forwards, blink 0.7s infinite;
+    margin-bottom: 20px;
+    text-shadow: none;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: #fff;
+    }
+}
+
 /* Responsividade para telas menores que 600px */
 @media (max-width: 600px) {
     h1 {
@@ -91,4 +126,5 @@ video {
         font-size: 14px;
         padding: 10px 20px;
     }
+
 }

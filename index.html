@@ -1,53 +1,80 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maria Clara - 1 aninho</title>
-  <style>
-    iframe {
-      width: 100vw;
-      height: 100vh;
-      border: none;
-      display: none;
-    }
-  </style>
 
-  <link rel="stylesheet" href="mc-style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria Clara - 1 aninho</title>
+    <style>
+        iframe {
+            width: 100vw;
+            height: 100vh;
+            border: none;
+            display: none;
+        }
+    </style>
+
+    <link rel="stylesheet" href="mc-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <!-- Áudio aqui no documento principal -->
-  <audio id="bg-music" loop>
-    <source src="sound-bg.mp3" type="audio/mpeg">
-  </audio>
+    <!-- Áudio aqui no documento principal -->
+    <audio id="bg-music" loop>
+        <source src="sound-bg.mp3" type="audio/mpeg">
+    </audio>
 
-  <!-- Tela de boas-vindas -->
-  <div id="inicio">
-    <h1>Maria Clara - 1 aninho</h1>
-    <button class="btn-confirmar" onclick="entrar()">Clique para saber sobre os detalhes da festa!</button>
-  </div>
+    <!-- Tela de boas-vindas -->
+    <div id="inicio">
+        <h1>Maria Clara - 1 aninho</h1>
+        <div id="mensagem" class="typewriter"></div>
+        <button class="btn-confirmar" onclick="entrar()">Prosseguir</button>
+    </div>
 
-  <!-- Iframe escondido inicialmente -->
-  <iframe id="iframe" name="conteudo"></iframe>
+    <!-- Iframe escondido inicialmente -->
+    <iframe id="iframe" name="conteudo"></iframe>
 
-  <script>
-    function entrar() {
-      const music = document.getElementById('bg-music');
-      music.play().then(() => {
-        // Oculta tela de entrada
-        document.getElementById('inicio').style.display = 'none';
+    <script>
+        function entrar() {
+            const music = document.getElementById('bg-music');
+            music.play().then(() => {
+                // Oculta tela de entrada
+                document.getElementById('inicio').style.display = 'none';
 
-        // Exibe o iframe com o conteúdo
-        const iframe = document.getElementById('iframe');
-        iframe.style.display = 'block';
-        iframe.src = 'index2.html'; // ou 'index2.html', dependendo da ordem
-      }).catch(() => {
-        alert("Clique para permitir a música de fundo.");
-      });
-    }
-  </script>
+                // Exibe o iframe com o conteúdo
+                const iframe = document.getElementById('iframe');
+                iframe.style.display = 'block';
+                iframe.src = 'index2.html'; // ou 'index2.html', dependendo da ordem
+            }).catch(() => {
+                alert("Clique para permitir a música de fundo.");
+            });
+        }
+    </script>
+
+    <script>
+        const texto = "Olá, \n\nObrigado pela visita, \n\nClique no botão abaixo para saber \nmais sobre os detalhes da festa!";
+        const elemento = document.getElementById("mensagem");
+        let index = 0;
+
+        function escrever() {
+            if (index < texto.length) {
+                let char = texto.charAt(index);
+                if (char === '\n') {
+                    char = '<br>'; // Transformar a quebra de linha em <br>
+                }
+                elemento.innerHTML += char;
+                index++;
+                setTimeout(escrever, 50); // velocidade da digitação
+            } else {
+                // Para de piscar o cursor depois que termina
+                elemento.style.borderRight = 'none';
+            }
+        }
+
+        escrever();
+    </script>
 
 </body>
+
 </html>
