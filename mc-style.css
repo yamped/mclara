@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url('bg4.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 0.6);
+    font-family: 'Pacifico', cursive;
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+#inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #e17eb0;
+    margin-bottom: 10px;
+    font-family: 'Pacifico', cursive;
+}
+
+video {
+    width: 480px;
+    height: 650px;
+    object-fit: cover;
+    border-radius: 100px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.btn-confirmar {
+    box-shadow: inset 0px 1px 0px 0px #efdcfb;
+    background: linear-gradient(to bottom, #dfbdfa 5%, #bc80ea 100%);
+    background-color: #dfbdfa;
+    border-radius: 15px;
+    border: 1px solid #c584f3;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: 'Arial Black', cursive;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #9752cc;
+    margin-bottom: 20px;
+}
+
+.btn-confirmar:hover {
+    background: linear-gradient(to bottom, #bc80ea 5%, #dfbdfa 100%);
+    background-color: #bc80ea;
+}
+
+.btn-confirmar:active {
+    position: relative;
+    top: 1px;
+}
+
+/* Responsividade para telas menores que 600px */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+
+    video {
+        width: 90%;
+        height: auto;
+        border-radius: 40px;
+    }
+
+    .btn-confirmar {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}

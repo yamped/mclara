@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maria Clara - 1 aninho</title>
+  <style>
+    iframe {
+      width: 100vw;
+      height: 100vh;
+      border: none;
+      display: none;
+    }
+  </style>
+
+  <link rel="stylesheet" href="mc-style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Áudio aqui no documento principal -->
+  <audio id="bg-music" loop>
+    <source src="sound-bg.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Tela de boas-vindas -->
+  <div id="inicio">
+    <h1>Maria Clara - 1 aninho</h1>
+    <button class="btn-confirmar" onclick="entrar()">Clique para saber sobre os detalhes da festa!</button>
+  </div>
+
+  <!-- Iframe escondido inicialmente -->
+  <iframe id="iframe" name="conteudo"></iframe>
+
+  <script>
+    function entrar() {
+      const music = document.getElementById('bg-music');
+      music.play().then(() => {
+        // Oculta tela de entrada
+        document.getElementById('inicio').style.display = 'none';
+
+        // Exibe o iframe com o conteúdo
+        const iframe = document.getElementById('iframe');
+        iframe.style.display = 'block';
+        iframe.src = 'index2.html'; // ou 'index2.html', dependendo da ordem
+      }).catch(() => {
+        alert("Clique para permitir a música de fundo.");
+      });
+    }
+  </script>
+
+</body>
+</html>
