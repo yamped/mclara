@@ -25,9 +25,10 @@ body {
 
 h1 {
     font-size: 2.5em;
-    color: #e17eb0;
+    color: #f984bf;
     margin-bottom: 10px;
     font-family: 'Pacifico', cursive;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
 }
 
 video {
@@ -48,13 +49,13 @@ video {
 .btn-confirmar {
     box-shadow: inset 0px 1px 0px 0px #efdcfb;
     background: linear-gradient(to bottom, #dfbdfa 5%, #bc80ea 100%);
-    background-color: #dfbdfa;
+    background-color: #f984bf;
     border-radius: 15px;
     border: 1px solid #c584f3;
     display: inline-block;
     cursor: pointer;
     color: #ffffff;
-    font-family: 'Arial Black', cursive;
+    font-family: 'Arial Black';
     font-size: 12px;
     font-weight: bold;
     padding: 6px 24px;
